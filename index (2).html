@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masterclass — Le Diagnostic</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:#120704;
+  font-family:Arial,sans-serif;
+  color:#fff;
+}
+
+.container{
+  max-width:560px;
+  margin:auto;
+  min-height:100vh;
+}
+
+.affiche{
+  width:100%;
+  display:block;
+}
+
+.formulaire{
+  margin:18px;
+  padding:24px;
+  background:#24100a;
+  border:1px solid #a86d18;
+  border-radius:16px;
+}
+
+h1{
+  text-align:center;
+  color:#f4b400;
+  font-size:23px;
+  margin:0 0 8px;
+}
+
+.sous-titre{
+  text-align:center;
+  margin-bottom:22px;
+}
+
+label{
+  display:block;
+  margin:15px 0 7px;
+  font-weight:bold;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:9px;
+  font-size:16px;
+}
+
+button{
+  width:100%;
+  margin-top:24px;
+  padding:16px;
+  border:0;
+  border-radius:10px;
+  background:#f4b400;
+  color:#180900;
+  font-size:16px;
+  font-weight:bold;
+}
+
+.info{
+  text-align:center;
+  font-size:12px;
+  color:#cdbdb5;
+  margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Mets l'affiche dans le même dossier que ce fichier -->
+  <img src="affiche.jpg" class="affiche" alt="Masterclass Le Diagnostic">
+
+  <div class="formulaire">
+
+    <h1>INSCRIPTION À LA MASTERCLASS</h1>
+
+    <div class="sous-titre">
+      <strong>LE DIAGNOSTIC</strong>
+    </div>
+
+    <form id="formulaire">
+
+      <label>Nom</label>
+      <input type="text" id="nom" placeholder="Votre nom" required>
+
+      <label>Post-nom</label>
+      <input type="text" id="postnom" placeholder="Votre post-nom" required>
+
+      <label>Prénom</label>
+      <input type="text" id="prenom" placeholder="Votre prénom" required>
+
+      <label>Ville</label>
+      <input type="text" id="ville" placeholder="Votre ville" required>
+
+      <label>Fonction</label>
+      <input type="text" id="fonction" placeholder="Votre fonction" required>
+
+      <label>Numéro WhatsApp</label>
+      <input type="tel" id="whatsapp" placeholder="Ex : 0812345678" required>
+
+      <button type="submit">
+        CONFIRMER MON INSCRIPTION
+      </button>
+
+    </form>
+
+    <div class="info">
+      Après validation, vous serez automatiquement redirigé vers WhatsApp.
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+
+document.getElementById("formulaire").addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  const nom = document.getElementById("nom").value;
+  const postnom = document.getElementById("postnom").value;
+  const prenom = document.getElementById("prenom").value;
+  const ville = document.getElementById("ville").value;
+  const fonction = document.getElementById("fonction").value;
+  const whatsapp = document.getElementById("whatsapp").value;
+
+  const message =
+`Bonjour, je viens de m'inscrire à la Masterclass « Le Diagnostic ».
+
+Nom : ${nom}
+Post-nom : ${postnom}
+Prénom : ${prenom}
+Ville : ${ville}
+Fonction : ${foncti on}
+Numéro WhatsApp : ${whatsapp}`;
+
+  const lien =
+    "https://wa.me/243865993059?text=" +
+    encodeURIComponent(message);
+
+  window.location.href = lien;
+
+});
+
+</script>
+
+</body>
+</html>
